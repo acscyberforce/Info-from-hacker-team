@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Tiger Mate Secure Form</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Courier New", monospace;
+    background: radial-gradient(circle at top, #050505, #000000);
+    color: #00ffcc;
+    text-align: center;
+}
+
+/* container */
+.container {
+    max-width: 420px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* image */
+.top-image {
+    width: 60%;
+    max-width: 200px;
+    border-radius: 12px;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+/* header */
+.header {
+    background: rgba(0,255,204,0.08);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #00ffcc;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 5px;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+/* inputs */
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #00ffcc;
+    background: #111;
+    color: #00ffcc;
+    outline: none;
+}
+
+/* button */
+button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #00ffcc;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* rules */
+.rules {
+    background: rgba(0,255,204,0.05);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: left;
+    border: 1px solid #00ffcc;
+    line-height: 1.5;
+}
+
+/* ceo */
+.ceo {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ff00ff;
+    background: rgba(255,0,255,0.08);
+    color: #ff66ff;
+    text-align: left;
+    font-size: 12px;
+}
+
+/* terminal */
+.terminal {
+    margin-top: 10px;
+    height: 120px;
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid #00ffcc;
+    background: rgba(0,255,204,0.05);
+    text-align: left;
+    font-size: 11px;
+}
+
+/* glow */
+.glow {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #00ffcc; }
+    to { text-shadow: 0 0 15px #00ffcc; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img class="top-image" src="https://i.ibb.co/LdZ8dYWY/c43bfe6f859d.jpg">
+
+<div class="header glow">
+    <h1>TEAM TIGER M@TE</h1>
+    <div>SECURE JOIN SYSTEM ACTIVE</div>
+</div>
+
+<!-- CEO INFO -->
+<div class="ceo">
+💠 CEO: TONMOY<br>
+⚡ ROLE: Founder & System Owner<br>
+💻 SKILL: Web / Bot / UI Design<br>
+🧠 STATUS: ACTIVE<br>
+🔐 LEVEL: ADMIN ACCESS
+</div>
+
+<!-- FORM -->
+<input id="name" placeholder="Full Name">
+<input id="address" placeholder="Address">
+<input id="age" placeholder="Age">
+<input id="religion" placeholder="Religion">
+<input id="phone" placeholder="Phone Number">
+<input id="email" placeholder="Gmail">
+
+<select id="gender">
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+</select>
+
+<input id="reason" placeholder="Why join Team Tiger Mate?">
+
+<!-- TERMINAL -->
+<div class="terminal" id="terminal">
+> system booting...<br>
+> loading secure module...<br>
+> initializing encryption...<br>
+> ready ✓
+</div>
+
+<!-- RULES -->
+<div class="rules">
+⚡ RULES ⚡<br><br>
+
+1️⃣ Respect Everyone<br>
+2️⃣ No Toxic Behavior<br>
+3️⃣ Team Unity Required<br>
+4️⃣ Follow Admin Orders<br>
+5️⃣ No Misuse Allowed<br>
+</div>
+
+<button onclick="send()">SEND 🚀</button>
+
+<div id="msg"></div>
+
+</div>
+
+<script>
+let terminal = document.getElementById("terminal");
+
+let logs = [
+"> scanning form...",
+"> encrypting data...",
+"> validating user...",
+"> connection secure...",
+"> ready to send ✓"
+];
+
+let i = 0;
+setInterval(()=>{
+    if(i < logs.length){
+        terminal.innerHTML += "<br>" + logs[i];
+        i++;
+    }
+}, 1200);
+
+function send() {
+
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+    let age = document.getElementById("age").value;
+    let religion = document.getElementById("religion").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let gender = document.getElementById("gender").value;
+    let reason = document.getElementById("reason").value;
+
+    let msg = document.getElementById("msg");
+
+    if(!name || !address || !phone || !email){
+        msg.innerHTML = "⚠ Please fill required fields!";
+        return;
+    }
+
+    let message =
+`⚡ TEAM TIGER M@TE APPLICATION ⚡
+
+👤 Name: ${name}
+📍 Address: ${address}
+🎂 Age: ${age}
+🕌 Religion: ${religion}
+📱 Phone: ${phone}
+📧 Email: ${email}
+⚧ Gender: ${gender}
+💬 Reason: ${reason}
+
+━━━━━━━━━━━━━━
+💠 CEO: TONMOY SYSTEM`;
+
+    fetch("https://api.telegram.org/bot8754066263:AAHrxxYhTHXOBS5VHIwICpDeC5YZrIfWA7g/sendMessage", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            chat_id: "6677015207",
+            text: message
+        })
+    });
+
+    msg.innerHTML = "✅ DATA SENT SUCCESSFULLY!";
+}
+</script>
+
+</body>
+</html>
